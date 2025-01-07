@@ -4,10 +4,10 @@
 
 Foundry consists of:
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
+- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
+- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
+- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
 
 ## Documentation
 
@@ -45,12 +45,6 @@ $ forge snapshot
 $ anvil
 ```
 
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
 ### Cast
 
 ```shell
@@ -64,3 +58,18 @@ $ forge --help
 $ anvil --help
 $ cast --help
 ```
+
+## Using the PoC repo
+
+### Running the tests and logging events
+
+- Take the bytecode of original deployment from eth mainnet fork (buildbear sandbox's simulation of eth mainnet)
+- Create new contract with updated function and inject the missing event
+- etch the new bytecode to original contract's address and run the tx with the same parameters
+- Run the test with the following command
+
+```bash
+forge test --mt test_buildbear_sandbox_event_injection -vvvv
+```
+
+### Simulating a real world tx on eth mainnet using scripts

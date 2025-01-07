@@ -49,6 +49,9 @@ contract SetCodeTest is Script {
             "Receiver address DAI Balance on Buildbear Sandbox before transfer: ",
             Dai(DAI_ETH_MAINNET_ADDRESS).balanceOf(0x6B175474E89094C44Da98b954EedeAC495271d0F)
         );
+        uint256 currentNonce = vm.getNonce(0xf1dA173228fcf015F43f3eA15aBBB51f0d8f1123);
+
+        console.log("Current nonce for impersonated address:", currentNonce);
         vm.startBroadcast(address(0xf1dA173228fcf015F43f3eA15aBBB51f0d8f1123));
         Dai(DAI_ETH_MAINNET_ADDRESS).approve(0x6B175474E89094C44Da98b954EedeAC495271d0F, 2581366963101906549127);
         DaiV2(DAI_ETH_MAINNET_ADDRESS).transferFrom(
