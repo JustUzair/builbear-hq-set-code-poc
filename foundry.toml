@@ -8,4 +8,4 @@ solc = "0.8.0"
 optimizer=false
 
 [rpc_endpoints]
-buildbear = "https://rpc.buildbear.io/silky-bucky-e35bf6fc"
+buildbear = "https://rpc.buildbear.io/mighty-captainamerica-167b8637"
