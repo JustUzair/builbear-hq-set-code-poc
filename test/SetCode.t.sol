@@ -38,10 +38,10 @@ contract SetCodeTest is Test {
         vm.selectFork(forkID);
     }
 
-    function test_customEventEmission() public {
+    function test_buildbear_sandbox_event_injection() public {
         // Step 1: Fetch original bytecode
         bytes memory originalCode = DAI_ETH_MAINNET_ADDRESS.code;
-        emit log_named_bytes("Original Code", originalCode);
+        // emit log_named_bytes("Original Code", originalCode);
 
         // Step 2: Deploy modified bytecode
         bytes memory newBytecode = type(DaiV2).runtimeCode; // Replace with your modified contract
