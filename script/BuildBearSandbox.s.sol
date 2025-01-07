@@ -10,7 +10,7 @@ contract SetCodeTest is Script {
     string buildbear_eth_mainnet_fork_url = "https://rpc.buildbear.io/mighty-captainamerica-167b8637";
     address constant DAI_ETH_MAINNET_ADDRESS = 0x6B175474E89094C44Da98b954EedeAC495271d0F;
 
-    event BuildBearDAIV2Event(bytes32 data);
+    event BuildBearDAIV2Event(string data);
     event Transfer(address indexed src, address indexed dst, uint256 wad);
 
     /*-------------------------------------------
